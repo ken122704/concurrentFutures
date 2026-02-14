@@ -63,3 +63,26 @@ def compute_payroll(employee):
         "total_deduction": total_deduction,
         "net_salary": net_salary
     }
+
+from concurrent.futures import ProcessPoolExecutor
+
+employees = [
+    ("Alice", 25000),
+    ("Bob", 32000),
+    ("Charlie", 28000),
+    ("Diana", 40000),
+    ("Edward", 35000)
+]
+
+def data_parallelism_demo():
+    print("\n===== DATA PARALLELISM (ProcessPoolExecutor) =====")
+
+    with ProcessPoolExecutor() as executor:
+        results = executor.map(compute_payroll, employees)
+
+    for result in results:
+        print("\n---------------------------")
+        print(f"Employee: {result['name']}")
+        print(f"Gross Salary: {result['gross_salary']:.2f}")
+        print(f"Total Deduction: {result['total_deduction']:.2f}")
+        print(f"Net Salary: {result['net_salary']:.2f}")
