@@ -40,7 +40,7 @@ def task_parallelism_demo(salary):
     print(f"Tax: {tax:.2f}")
     print(f"Total Deduction: {total_deduction:.2f}")
 
-    return total_deductions
+    return total_deduction
 
 def compute_payroll(employee):
     name, salary = employee
@@ -84,7 +84,7 @@ def data_parallelism_demo():
         print(f"Net Salary: {result['net_salary']:.2f}")
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
 
     
     sample_salary = 30000
