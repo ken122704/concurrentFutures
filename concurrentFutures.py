@@ -1,7 +1,3 @@
-# ==============================
-# MEMBER 1 – DEDUCTION FUNCTIONS
-# ==============================
-
 import threading
 
 def compute_sss(salary):
@@ -86,3 +82,13 @@ def data_parallelism_demo():
         print(f"Gross Salary: {result['gross_salary']:.2f}")
         print(f"Total Deduction: {result['total_deduction']:.2f}")
         print(f"Net Salary: {result['net_salary']:.2f}")
+
+
+if _name_ == "_main_":
+
+    
+    sample_salary = 30000
+
+    task_parallelism_demo(sample_salary)
+
+    data_parallelism_demo()
