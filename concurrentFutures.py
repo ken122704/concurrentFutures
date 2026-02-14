@@ -45,3 +45,21 @@ def task_parallelism_demo(salary):
     print(f"Total Deduction: {total_deduction:.2f}")
 
     return total_deductions
+
+def compute_payroll(employee):
+    name, salary = employee
+
+    sss = salary * 0.045
+    philhealth = salary * 0.025
+    pagibig = salary * 0.02
+    tax = salary * 0.10
+
+    total_deduction = sss + philhealth + pagibig + tax
+    net_salary = salary - total_deduction
+
+    return {
+        "name": name,
+        "gross_salary": salary,
+        "total_deduction": total_deduction,
+        "net_salary": net_salary
+    }
